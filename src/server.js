@@ -3,6 +3,8 @@ import cors from "cors";
 import router from "router";
 import { protect } from "./modules/auth.js";
 import { createUser, loginUser } from "./handlers/user.js";
+import blogRoutes from "./routes/blog.js"
+import db from "./db.js";
 
 
 const app = express();
@@ -13,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 
-app.use('/api', protect, router);
+app.use('/api', protect, blogRoutes);
 
 app.post('/login', loginUser, (req, res) => {
     res.json({

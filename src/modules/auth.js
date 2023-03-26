@@ -2,7 +2,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 export const hashPassword = (password) => {
-    return bcrypt.hash(password, 6);
+    return bcrypt.hash(password, 8);
 }
 
 export const comparePassword = (password, hash) => {
@@ -13,8 +13,7 @@ export const createJwt = (user) => {
     const token = jwt.sign({
         id: user.id,
         email: user.email,
-        username: user.username,
-        admin: user.admin
+        isAdmin: user.isAdmin
     }, process.env.JWT_SECRET)
 
     return token;
@@ -26,7 +25,7 @@ export const protect = (req, res, next) => {
 
     if(!bearer) {
         res.status(401);
-        res.send({message: 'Not authorized', data: null})
+        res.json({message: 'Not authorized', data: null})
         return;
     }
 
@@ -34,7 +33,7 @@ export const protect = (req, res, next) => {
 
     if (!token) {
         res.status(401);
-        res.send({message: 'Invalid token', data: null})
+        res.json({message: 'Invalid token', data: null})
         return;
     }
 
@@ -47,14 +46,14 @@ export const protect = (req, res, next) => {
     } catch (e) {
         console.log(e.message);
         res.status(402);
-        res.send({message: 'Unauthorized', data: null});
+        res.json({message: 'Unauthorized', data: null});
         return;
     }
 }
 
 
 export const isAdmin = (req, res) => {
-    const admin = req.user.admin;
+    const admin = req.user.isAdmin;
 
     if(!admin) {
         res.status(401);

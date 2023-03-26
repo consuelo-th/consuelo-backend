@@ -1,7 +1,6 @@
 import { hashPassword, comparePassword, createJwt } from "../modules/auth.js";
-// import db
-
-
+import User from "../models/user.js";
+import db from "../db.js";
 
 
 export const createUser = async (req, res) => {
@@ -10,11 +9,15 @@ export const createUser = async (req, res) => {
         first_name: req.body.first_name,
         last_name: req.body.last_name,
         email: req.body.email,
-        password: req.body.password
+        password: hash
     }
 
-    // save user to db
+    const newUser = new User(user);
+    user.id = newUser.id;
 
+    newUser.save()
+        .then(user => console.log(user))
+        .catch(err => console.log(err));
     const token = createJwt(user);
     res.json({token})
 
@@ -22,21 +25,32 @@ export const createUser = async (req, res) => {
 
 
 export const loginUser = async (req, res) => {
-    const user = {
-        email: req.body.email, //GET email from db 
-        password: req.body.password 
+    const user = await User.findOne({email: req.body.email});
+    if(!user) {
+        res.status(401).json({
+            status: 401,
+            message: "Incorrect username or password"
+        });
+
+        return;
     }
 
-    // If email exists in db check if password is correct
     const isValid = await comparePassword(req.body.password, user.password);
 
     if (!isValid) {
-        res.status(401);
-        res.json({message: "Incorrect username or password"});
+        res.status(401).json({
+            status: 401,
+            message: "Incorrect username or password"
+        });
         return;
     }
 
     // create token
-    const token = createJwt(user);
+    const token = createJwt({
+        id: user.id,
+        email: user.email,
+        isAdmin: user.isAdmin
+    });
+
     res.json({token});
 }
