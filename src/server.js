@@ -14,6 +14,18 @@ app.use(express.urlencoded({ extended: true }));
 
 
 
+app.get('/', (req, res) => {
+    res.json({
+        "status": "200",
+        "message": "success",
+        "data": [
+            {
+                "message": "Hello from consuelo! Our API is still in progress, see you soon!"
+            }
+        ]
+
+    })
+});
 
 app.use('/api', protect, blogRoutes);
 
