@@ -1,16 +1,15 @@
 import { Router } from "express";
 const router = Router();
 
+import { isAdmin } from "../modules/auth.js";
+import { getAllBlogs, createBlog, deleteBlog, getOneBlog, updateBlog } from "../handlers/blog.js";
 
-router.get("/blog", (req, res) => {
-    res.json({
-        message: "you are in, welldone sir"
-    })
-});
-router.get("/blog/:id", (req, res) => {});
-router.post("/blog", (req, res) => {});
-router.put("/blog/:id", (req, res) => {});
-router.delete("/blog/:id", (req, res) => {});
+
+router.get("/blog", getAllBlogs);
+router.get("/blog/:id", getOneBlog);
+router.post("/blog", createBlog);
+router.put("/blog/:id", updateBlog);
+router.delete("/blog/:id", deleteBlog);
 
 
 

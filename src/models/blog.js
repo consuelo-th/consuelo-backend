@@ -1,4 +1,5 @@
-import mongoose from "../db";
+import mongoose from "mongoose";
+import db from "../db.js";
 
 const blogSchema = new mongoose.Schema({
     title: {
@@ -9,7 +10,11 @@ const blogSchema = new mongoose.Schema({
       type: String,
       required: true
     },
-    author: {
+    image: {
+      data: Buffer,
+      contentType: String
+    },
+    authorId: {
       type: String,
       required: true
     },

@@ -1,17 +1,16 @@
 import express from "express";
 import cors from "cors";
-import router from "router";
 import { protect } from "./modules/auth.js";
 import { createUser, loginUser } from "./handlers/user.js";
 import blogRoutes from "./routes/blog.js"
 import db from "./db.js";
+import SelfAffirmation from "./models/selfAffirmation.js";
 
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 
 
 app.get('/', (req, res) => {
@@ -28,6 +27,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api', protect, blogRoutes);
+app.use('/api', protect, SelfAffirmation);
 
 app.post('/login', loginUser, (req, res) => {
     res.json({
