@@ -1,17 +1,20 @@
 import Blog from "../models/blog.js";
+import fs from "fs";
+import path from "path";
+import { upload } from "../modules/upload.js";
 
 
 // CREATE
 export const createBlog = async (req, res) => {
-    const { title, body, imageBuffer, contentType, authorId } = req.body;
+    const { title, body, image, authorId } = req.body;
 
     try {
         const newBlog = await Blog.create({
             title,
             body,
             image: {
-                data: imageBuffer,
-                contentType
+                data: image.data,
+                contentType: image.contentType
             },
             authorId
         });

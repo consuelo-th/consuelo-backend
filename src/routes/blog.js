@@ -3,6 +3,7 @@ const router = Router();
 
 import { isAdmin } from "../modules/auth.js";
 import { getAllBlogs, createBlog, deleteBlog, getOneBlog, updateBlog } from "../handlers/blog.js";
+import { upload } from "../modules/upload.js";
 
 
 router.get("/blog", getAllBlogs);

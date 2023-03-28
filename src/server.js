@@ -3,8 +3,9 @@ import cors from "cors";
 import { protect } from "./modules/auth.js";
 import { createUser, loginUser } from "./handlers/user.js";
 import blogRoutes from "./routes/blog.js"
+import SelfAffirmationRoutes from "./routes/selfAffirmation.js";
+import mentalHealthTipsRoutes from "./routes/mentalHealthTips.js";
 import db from "./db.js";
-import SelfAffirmation from "./models/selfAffirmation.js";
 
 
 const app = express();
@@ -27,7 +28,8 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api', protect, blogRoutes);
-app.use('/api', protect, SelfAffirmation);
+app.use('/api', protect, SelfAffirmationRoutes);
+app.use('/api', protect, mentalHealthTipsRoutes);
 
 app.post('/login', loginUser, (req, res) => {
     res.json({
