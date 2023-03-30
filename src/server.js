@@ -5,6 +5,7 @@ import { createUser, loginUser } from "./handlers/user.js";
 import blogRoutes from "./routes/blog.js"
 import SelfAffirmationRoutes from "./routes/selfAffirmation.js";
 import mentalHealthTipsRoutes from "./routes/mentalHealthTips.js";
+import postRoutes from "./routes/post.js"
 import db from "./db.js";
 
 
@@ -30,6 +31,7 @@ app.get('/', (req, res) => {
 app.use('/api', protect, blogRoutes);
 app.use('/api', protect, SelfAffirmationRoutes);
 app.use('/api', protect, mentalHealthTipsRoutes);
+app.use('/api', protect, postRoutes);
 
 app.post('/login', loginUser, (req, res) => {
     res.json({

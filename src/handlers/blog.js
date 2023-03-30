@@ -42,8 +42,9 @@ export const getAllBlogs = async (req, res) => {
 
       } catch (err) {
         console.error(err);
-        res.status(500).json({ message: 'Error getting blogs.' });
-
+        res.status(500).json({
+             message: 'Error getting blogs.' 
+            });
       }
 }
 
@@ -98,7 +99,7 @@ export const updateBlog = async (req, res) => {
 
 
 
-// DELETE
+// DELETE BLOG
 export const deleteBlog = async(req, res) => {
     const { id } = req.params;
 

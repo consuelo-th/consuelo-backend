@@ -7,10 +7,10 @@ import { upload } from "../modules/upload.js";
 
 
 router.get("/tip", getAllTips);
-router.get("/tip:id", createTip);
-router.post("/tip", deleteTip);
-router.put("/tip/:id", getOneTip);
-router.delete("/tip/:id", updateTip);
+router.get("/tip/:id", getOneTip);
+router.post("/tip", createTip);
+router.put("/tip/:id", updateTip);
+router.delete("/tip/:id", deleteTip);
 
 
 

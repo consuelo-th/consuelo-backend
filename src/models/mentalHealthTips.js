@@ -9,6 +9,10 @@ const mentalHealthTipSchema = new mongoose.Schema({
     authorId: {
       type: String,
       required: true
+    },
+    category: {
+      type: String,
+      required: true
     }
   });
   
