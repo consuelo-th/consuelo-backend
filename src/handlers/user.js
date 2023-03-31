@@ -6,8 +6,8 @@ import db from "../db.js";
 export const createUser = async (req, res) => {
     const hash = await hashPassword(req.body.password);
     const user = {
-        first_name: req.body.first_name,
-        last_name: req.body.last_name,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
         email: req.body.email,
         password: hash
     }
