@@ -26,7 +26,9 @@ export const createUser = async (req, res) => {
 
       } catch (err) {
         console.log(err);
-        res.status(500).send('An error occured, unable to create user');
+        res.status(500).json({
+            "message": "An error occured, unable to create use"
+        });
 
       }
       

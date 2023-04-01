@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import morgan from "morgan";
 import { protect } from "./modules/auth.js";
 import { createUser, loginUser } from "./handlers/user.js";
 import blogRoutes from "./routes/blog.js"
@@ -9,7 +10,9 @@ import postRoutes from "./routes/post.js"
 import db from "./db.js";
 
 
+
 const app = express();
+app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
