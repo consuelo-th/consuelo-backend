@@ -2,23 +2,34 @@ import { hashPassword, comparePassword, createJwt } from "../modules/auth.js";
 import User from "../models/user.js";
 
 export const createUser = async (req, res) => {
-    const hash = await hashPassword(req.body.password);
-    const user = {
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        email: req.body.email,
-        password: hash
-    }
+    try {
+        const hash = await hashPassword(req.body.password);
+        const user = {
+          firstName: req.body.firstName,
+          lastName: req.body.lastName,
+          email: req.body.email,
+          password: hash
+        };
+      
+        const newUser = new User(user);
+        user.id = newUser.id;
+      
+        const savedUser = await newUser.save();
+      
+        const token = createJwt({
+            id: user.id,
+            email: user.email,
+            isAdmin: user.isAdmin
+        });
+      
+        res.json({ token });
 
-    const newUser = new User(user);
-    user.id = newUser.id;
+      } catch (err) {
+        console.log(err);
+        res.status(500).send('An error occured, unable to create user');
 
-    newUser.save()
-        .then(user => console.log(user))
-        .catch(err => console.log(err));
-    const token = createJwt(user);
-    res.json({token})
-
+      }
+      
 }
 
 
