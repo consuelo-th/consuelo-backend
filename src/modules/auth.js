@@ -1,9 +1,20 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-export const hashPassword = (password) => {
-    return bcrypt.hash(password, 8);
-}
+
+export const hashPassword = async (password) => {
+    try {
+        console.log(process.env.ENCRYPTION_SALT_ROUNDS)
+      const salt = await bcrypt.genSalt(9);
+      const hash = await bcrypt.hash(password, salt);
+      return hash;
+
+    } catch (error) {
+      throw new Error(`Error hashing password: ${error.message}`);
+
+    }
+  };
+  
 
 export const comparePassword = (password, hash) => {
     return bcrypt.compare(password, hash);

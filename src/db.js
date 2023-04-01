@@ -1,6 +1,9 @@
+import * as dotenv from "dotenv";
+dotenv.config();
+
 import mongoose from "mongoose";
 
-mongoose.connect("mongodb://mongo:YJ3uxAIBc49qaNU6ZlNj@containers-us-west-126.railway.app:6228", {
+mongoose.connect(process.env.DATABASE_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
