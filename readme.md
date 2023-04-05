@@ -6,33 +6,6 @@ All backend code follows the modular architecture. The business logic is abstrac
 
 ## Folder Structure
 
-├── node_modules
-├── src
-│  ├── handlers
-│  │    └── blog.js
-│  │    └── mentalHealthTips.js
-│  │    └── selfAffirmation.js
-│  │    └── post.js
-│  │    └── user.js
-│  ├── models
-│  │    └── blog.js
-│  │    └── mentalHealthTips.js
-│  │    └── selfAffirmation.js
-│  │    └── user.js
-│  ├── modules
-│  │    └── auth.js
-│  │    └── upload.js
-│  ├── routes
-│  │    └── blog.js
-│  │    └── mentalHealthTips.js
-│  │    └── post.js
-│  │    └── selfAffirmation.js
-│  │    └── user.js
-│  │
-│  ├── db.js
-│  ├── index.js
-│  ├── server.js
-
 ## Getting Started
 
 ### Pre-requisites and Local Development 
@@ -86,7 +59,7 @@ The API will return three error types when requests fail:
 - General:
     - Returns a token
     - Save a user in the db
-- `curl http://127.0.0.1:5000/books?page=3 -X POST -H "Content-Type: application/json" -d '{"title":"Neverwhere", "author":"Neil Gaiman", "rating":"5"}'`
+- `curl http://127.0.0.1:3000/signup -X POST -H "Content-Type: application/json" -d '{"firstName":"Neverwhere", "lastName":"Neil", "email":"example@yahoo.com", "password": "admin12345"}'`
 ``` {
     "token": "eyuyjhmky34545.67ygggyuhjngvtfrfghjkl
     }
