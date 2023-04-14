@@ -1,0 +1,719 @@
+{
+    "info": {
+        "name": "Consuelo",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "Blog",
+            "item": [
+                {
+                    "name": "All Blogs",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "https://consuelo-health.onrender.com/user",
+                            "path": [
+                                "user"
+                            ],
+                            "protocol": "https",
+                            "host": [
+                                "consuelo-health",
+                                "onrender",
+                                "com"
+                            ]
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWY3ZTMxMjY5NTMxOTUwYzU4YzlhOCIsImVtYWlsIjoiYmFzaWNAY29uc3VlbG8uY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY3OTk1NzA2OX0.-TlKyUnymyzb1-O63fyrQuMWk-IlV0V_iFxUSC3zm2k",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Single Blog",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:3000/api/blog/6422211035ed26da6d7fd09c",
+                            "path": [
+                                "api",
+                                "blog",
+                                "6422211035ed26da6d7fd09c"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWY3ZTMxMjY5NTMxOTUwYzU4YzlhOCIsImVtYWlsIjoiYmFzaWNAY29uc3VlbG8uY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY3OTk1NzA2OX0.-TlKyUnymyzb1-O63fyrQuMWk-IlV0V_iFxUSC3zm2k",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Create Blog",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:3000/api/blog/",
+                            "path": [
+                                "api",
+                                "blog"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"title\": \"Seventh Blog\",\n  \"body\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit.,\",\n  \"image\": {\n    \"data\": \"1111111 0111111111 1111111110001111111111111111000111111111 1111111110011111111111111110000111111111 1111111111111111111111111111111111111111 1111111111111111111111111111111111111111\",\n    \"contentType\": \"image/jpeg\" \n  },\n  \"authorId\": \"1234567890\" \n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWY3ZTMxMjY5NTMxOTUwYzU4YzlhOCIsImVtYWlsIjoiYmFzaWNAY29uc3VlbG8uY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY3OTk1NzA2OX0.-TlKyUnymyzb1-O63fyrQuMWk-IlV0V_iFxUSC3zm2k",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Update Blog",
+                    "request": {
+                        "method": "PUT",
+                        "url": {
+                            "raw": "http://localhost:3000/api/blog/641f7d97269531950c58c9a1",
+                            "path": [
+                                "api",
+                                "blog",
+                                "641f7d97269531950c58c9a1"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWY3ZTMxMjY5NTMxOTUwYzU4YzlhOCIsImVtYWlsIjoiYmFzaWNAY29uc3VlbG8uY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY3OTk1NzA2OX0.-TlKyUnymyzb1-O63fyrQuMWk-IlV0V_iFxUSC3zm2k",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete Blog",
+                    "request": {
+                        "method": "DELETE",
+                        "url": {
+                            "raw": "http://localhost:3000/api/blog/641f7d97269531950c58c9a1",
+                            "path": [
+                                "api",
+                                "blog",
+                                "641f7d97269531950c58c9a1"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWY3ZTMxMjY5NTMxOTUwYzU4YzlhOCIsImVtYWlsIjoiYmFzaWNAY29uc3VlbG8uY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY3OTk1NzA2OX0.-TlKyUnymyzb1-O63fyrQuMWk-IlV0V_iFxUSC3zm2k",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Self Affirmation",
+            "item": [
+                {
+                    "name": "All Affirmations",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:3000/api/selfaffirmation",
+                            "path": [
+                                "api",
+                                "selfaffirmation"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWY3ZTMxMjY5NTMxOTUwYzU4YzlhOCIsImVtYWlsIjoiYmFzaWNAY29uc3VlbG8uY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY3OTk1NzA2OX0.-TlKyUnymyzb1-O63fyrQuMWk-IlV0V_iFxUSC3zm2k",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Single Affirmation",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:3000/api/selfaffirmation/6422211035ed26da6d7fd09c",
+                            "path": [
+                                "api",
+                                "selfaffirmation",
+                                "6422211035ed26da6d7fd09c"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWY3ZTMxMjY5NTMxOTUwYzU4YzlhOCIsImVtYWlsIjoiYmFzaWNAY29uc3VlbG8uY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY3OTk1NzA2OX0.-TlKyUnymyzb1-O63fyrQuMWk-IlV0V_iFxUSC3zm2k",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Create Affirmation",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:3000/api/selfaffirmation",
+                            "path": [
+                                "api",
+                                "selfaffirmation"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"content\": \"I am a naughty spec2\",\n  \"authorId\": \"6422211035ed26da6d7fd09c\"\n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWY3ZTMxMjY5NTMxOTUwYzU4YzlhOCIsImVtYWlsIjoiYmFzaWNAY29uc3VlbG8uY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY3OTk1NzA2OX0.-TlKyUnymyzb1-O63fyrQuMWk-IlV0V_iFxUSC3zm2k",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Update Affirmation",
+                    "request": {
+                        "method": "PUT",
+                        "url": {
+                            "raw": "http://localhost:3000/api/selfaffirmation/642367465b89ae3125e0bb3c",
+                            "path": [
+                                "api",
+                                "selfaffirmation",
+                                "642367465b89ae3125e0bb3c"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"content\": \"I am not a naughty spec\",\n  \"authorId\": \"6422211035ed26da6d7fd09c\"\n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWY3ZTMxMjY5NTMxOTUwYzU4YzlhOCIsImVtYWlsIjoiYmFzaWNAY29uc3VlbG8uY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY3OTk1NzA2OX0.-TlKyUnymyzb1-O63fyrQuMWk-IlV0V_iFxUSC3zm2k",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete affirmation",
+                    "request": {
+                        "method": "DELETE",
+                        "url": {
+                            "raw": "http://localhost:3000/api/selfaffirmation/6422211035ed26da6d7fd09c",
+                            "path": [
+                                "api",
+                                "selfaffirmation",
+                                "6422211035ed26da6d7fd09c"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWY3ZTMxMjY5NTMxOTUwYzU4YzlhOCIsImVtYWlsIjoiYmFzaWNAY29uc3VlbG8uY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY3OTk1NzA2OX0.-TlKyUnymyzb1-O63fyrQuMWk-IlV0V_iFxUSC3zm2k",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Menal health tips",
+            "item": [
+                {
+                    "name": "All tips",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:3000/api/tip",
+                            "path": [
+                                "api",
+                                "tip"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWY3ZTMxMjY5NTMxOTUwYzU4YzlhOCIsImVtYWlsIjoiYmFzaWNAY29uc3VlbG8uY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY3OTk1NzA2OX0.-TlKyUnymyzb1-O63fyrQuMWk-IlV0V_iFxUSC3zm2k",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Single Tip",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:3000/api/tip/642586428e5287070f2d2bff",
+                            "path": [
+                                "api",
+                                "tip",
+                                "642586428e5287070f2d2bff"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWY3ZTMxMjY5NTMxOTUwYzU4YzlhOCIsImVtYWlsIjoiYmFzaWNAY29uc3VlbG8uY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY3OTk1NzA2OX0.-TlKyUnymyzb1-O63fyrQuMWk-IlV0V_iFxUSC3zm2k",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Create Affirmation",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:3000/api/tip",
+                            "path": [
+                                "api",
+                                "tip"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"content\": \"I don't love you\",\n  \"authorId\": \"6422211035ed26da6d7fd09c\",\n  \"category\": \"Hate Relationships\"\n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWY3ZTMxMjY5NTMxOTUwYzU4YzlhOCIsImVtYWlsIjoiYmFzaWNAY29uc3VlbG8uY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY3OTk1NzA2OX0.-TlKyUnymyzb1-O63fyrQuMWk-IlV0V_iFxUSC3zm2k",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Update tip",
+                    "request": {
+                        "method": "PUT",
+                        "url": {
+                            "raw": "http://localhost:3000/api/tip/6425874e873dd755448e9c60",
+                            "path": [
+                                "api",
+                                "tip",
+                                "6425874e873dd755448e9c60"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"content\": \"I am not a naughty spec\",\n  \"authorId\": \"6422211035ed26da6d7fd09c\"\n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWY3ZTMxMjY5NTMxOTUwYzU4YzlhOCIsImVtYWlsIjoiYmFzaWNAY29uc3VlbG8uY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY3OTk1NzA2OX0.-TlKyUnymyzb1-O63fyrQuMWk-IlV0V_iFxUSC3zm2k",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete tip",
+                    "request": {
+                        "method": "DELETE",
+                        "url": {
+                            "raw": "http://localhost:3000/api/tip/6425874e873dd755448e9c60",
+                            "path": [
+                                "api",
+                                "tip",
+                                "6425874e873dd755448e9c60"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWY3ZTMxMjY5NTMxOTUwYzU4YzlhOCIsImVtYWlsIjoiYmFzaWNAY29uc3VlbG8uY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY3OTk1NzA2OX0.-TlKyUnymyzb1-O63fyrQuMWk-IlV0V_iFxUSC3zm2k",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Posts",
+            "item": [
+                {
+                    "name": "All posts",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:3000/api/post",
+                            "path": [
+                                "api",
+                                "post"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWY3ZTMxMjY5NTMxOTUwYzU4YzlhOCIsImVtYWlsIjoiYmFzaWNAY29uc3VlbG8uY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY3OTk1NzA2OX0.-TlKyUnymyzb1-O63fyrQuMWk-IlV0V_iFxUSC3zm2k",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Single Post",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:3000/api/post/642597e6090999540831166f",
+                            "path": [
+                                "api",
+                                "post",
+                                "642597e6090999540831166f"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWY3ZTMxMjY5NTMxOTUwYzU4YzlhOCIsImVtYWlsIjoiYmFzaWNAY29uc3VlbG8uY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY3OTk1NzA2OX0.-TlKyUnymyzb1-O63fyrQuMWk-IlV0V_iFxUSC3zm2k",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Create Post",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:3000/api/post",
+                            "path": [
+                                "api",
+                                "post"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n \"text\": \"Second post\",\n \"author\": \"642586428e5287070f2d2bff\"\n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWY3ZTMxMjY5NTMxOTUwYzU4YzlhOCIsImVtYWlsIjoiYmFzaWNAY29uc3VlbG8uY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY3OTk1NzA2OX0.-TlKyUnymyzb1-O63fyrQuMWk-IlV0V_iFxUSC3zm2k",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Update post",
+                    "request": {
+                        "method": "PUT",
+                        "url": {
+                            "raw": "http://localhost:3000/api/post/642597e6090999540831166f",
+                            "path": [
+                                "api",
+                                "post",
+                                "642597e6090999540831166f"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"likes\": [\"642597e6090999540831166f\"],\n  \"comments\": [\"642597e6090999540831166f\", \"Hello\"]\n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWY3ZTMxMjY5NTMxOTUwYzU4YzlhOCIsImVtYWlsIjoiYmFzaWNAY29uc3VlbG8uY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY3OTk1NzA2OX0.-TlKyUnymyzb1-O63fyrQuMWk-IlV0V_iFxUSC3zm2k",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete Post",
+                    "request": {
+                        "method": "DELETE",
+                        "url": {
+                            "raw": "http://localhost:3000/api/post/642598770909995408311677",
+                            "path": [
+                                "api",
+                                "post",
+                                "642598770909995408311677"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWY3ZTMxMjY5NTMxOTUwYzU4YzlhOCIsImVtYWlsIjoiYmFzaWNAY29uc3VlbG8uY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY3OTk1NzA2OX0.-TlKyUnymyzb1-O63fyrQuMWk-IlV0V_iFxUSC3zm2k",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Sign Up",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://consuelo-health.onrender.com/api/user",
+                    "path": [
+                        "api",
+                        "user"
+                    ],
+                    "protocol": "https",
+                    "host": [
+                        "consuelo-health",
+                        "onrender",
+                        "com"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"firstName\": \"admin\",\n  \"lastName\": \"user\",\n  \"email\": \"admin_user@consuelo.com\",\n  \"password\": \"admin@1234\"\n}"
+                }
+            }
+        },
+        {
+            "name": "Login",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://consuelo-health.onrender.com/login",
+                    "path": [
+                        "login"
+                    ],
+                    "protocol": "https",
+                    "host": [
+                        "consuelo-health",
+                        "onrender",
+                        "com"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"email\": \"admin_user@consuelo.com\",\n  \"password\": \"admin@1234\"\n}"
+                }
+            }
+        }
+    ]
+}
