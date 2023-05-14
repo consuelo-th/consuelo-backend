@@ -57,17 +57,24 @@ export const createPost = async (req, res) => {
 }
 export const updatePost = async (req, res) => {
     const { id } = req.params;
-    const { likes, comments } = req.body;
+    const { likes, comments , author  } = req.body;
 
     try {
+        if(!author || !req.user.isAdmin) throw new Error("Author ID is required")
+        
+        const isAuthorized = author === req.user.id || req.user.isAdmin
+        if(!isAuthorized) throw new Error(" You are not authorized to edit this post")
         const updatedPost = Post.findByIdAndUpdate(id, {
             likes,
             comments
         })
+        res.status(201).json({
+            message: "post updated"
+        })
     } catch (err) {
         console.error(err);
         res.status(500).json({
-             message: 'cannot update post.' 
+             message: err.message
         });
     }
 
