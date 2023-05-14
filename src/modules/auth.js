@@ -61,7 +61,7 @@ export const protect = (req, res, next) => {
 }
 
 
-export const isAdmin = (req, res) => {
+export const isAdmin = (req, res, next) => {
     const admin = req.user.isAdmin;
 
     if(!admin) {
